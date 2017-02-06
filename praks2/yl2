@@ -1,0 +1,11 @@
+#!/bin/bash
+#
+# täiendatud tervitusskript
+#
+echo -n "Maldis-Sveno Laur, " # näitab nime
+echo "ISP16" # näitab õppegruppi
+echo "Antud aine on huvitav."  # ütleb, et mida ma tunnist arvan, kuidas see mulle on 
+echo "Praegu olen jõudnud antud tunnisisu valmis." # kaugele olen jõudnud
+#
+# skripti lõpp
+
