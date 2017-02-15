@@ -11,5 +11,5 @@ echo "Tere, $kasutaja!"
 kell=`date +'%H:%M'`
 echo "Kell on $kell"
 # loome ja väljastame kuupäeva
-kuupaev=`date +'%d:%B'`
+kuupaev=`date +'%d. %B'`
 echo "Täna on $kuupaev"
