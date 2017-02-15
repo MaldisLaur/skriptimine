@@ -2,3 +2,8 @@
 #
 # muutujate kasutamise näide
 #
+# defineerime muutuj aja omistame väärtuse
+# väärtus saadakse whoami käsuga
+kasutaja=`whoami`
+# väljastame muutuja väärtuse koos seletusega
+echo "Tere, $kasutaja"
