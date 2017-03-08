@@ -2,21 +2,30 @@
 #
 # arvu positiivsus ja negatiivsus kontroll
 #
-# küsime väärtused kasutaja käest
-echo -n "Sisesta arv: "
-read arv
-# kontrollime, kas on positiivne
-# sel juhul arv peab olema suurem kui 0
-if [ $arv -gt 0 ]; then
-	echo "$arv on positiivne."
-# juhul kui väärtus on negatiivne
-# siis arv peab olema väiksem kui 0
-elif [ $arv -lt 0 ]; then
-	echo "$arv on negatiivne."
-# kui esimene tingimus
-# või mingi teine tingimus ei sobinud
-# siis kasuta else osa
+#kontrollime, kas kasutaja sisestas käsurea kaudu ühe parameetri
+# kui mitte - trükin kasutusjuhendi välja
+if [ $# -ne 1 ]; then
+	echo "Kasutusjuhend:"
+	echo "$0 number"
+	echo "Näiteks: $0 5"
+#kui aga sisestatud korralikult üks parameeter, siis
 else
-	echo "$arv on neutraalne"
-# if lause tuleb korralikult lõpetada
+	#sisestame väärtused kasutaja käest
+	arv=$1
+	#kontrollime kas arv on positiivne
+	#sel juhul arv peab oelma suurem kui 0
+	if [ $arv -gt 0 ]; then
+		echo "$arv on positiivne."
+		# juhul kui väärtus on negatiivne
+		# siis arv peab olema väiksem kui 0
+	elif [ $arv -lt 0 ]; then
+		echo "$arv on negatiivne."
+	# kui esimene tingimus
+	# või mingi teine tingimus ei sobinud
+	# siis kasuta else osa
+	else
+		echo "$arv on neutraalne"
+	# if lause tuleb korralikult lõpetada
+	fi
+	#väline if lause tuleb ka korralikult lõpetada
 fi
