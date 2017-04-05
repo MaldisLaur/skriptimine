@@ -1,12 +1,12 @@
 #!/bin/bash
 #
-# poolik kolmnurk vasakult paremale
+# poolik kolmnurk  paremalt vasakule, numbrid tagurpidi
 #
-for((r=5; r>0; r--))
+for((r=1; r<6; r++))
 do
 #trükime reanumbri ilma reavhaetuseta
-#	echo -n $r
-	for((v=1; v<=$r; v++))
+	echo -n "$r "
+	for((v=1; v<$((6-$r+1)); v++))
 	do
 	#tärnid
 	echo -n "* "
