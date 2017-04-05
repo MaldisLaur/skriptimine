@@ -1,0 +1,26 @@
+#!/bin/bash
+#
+#kujund tärnide, ringide ja plussidega
+#
+for((r=1; r<7; r++))
+do
+#trükime reanumbri ilma reavhaetuseta
+#	echo -n "$r "
+	for((v=1; v<$((6-$r+1)); v++))
+	do
+	#tärnid
+	echo -n "  "
+	done
+	 #tuleb lisada o-d
+	 for((v=1; v<$r; v++))
+	 do
+	 echo -n "o "
+	 done
+#lisame plussid
+        	for((v=1; v<$(($r+1)); v++))
+        	do
+		echo -n "+ "
+		done
+	#kui rida lõpeb - reavahetus
+	echo
+done
