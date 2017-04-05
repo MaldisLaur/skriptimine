@@ -1,0 +1,18 @@
+#!/bin/bash
+#
+#See skript teeb ridades tärne, koguse mis sa vastuseks paned
+#
+
+	  echo -n "Sisesta ridade arv: " #Küsib ridade arvu
+	read arv
+	  echo -n "Sisesta tarnide arv reas: " #Küsib tärnide arvu reas
+	read reas
+	for (( i = 1 ; i <= $arv; i++ ))      ### Outer for loop ###
+do
+	  echo -n "$i. "
+    	for (( j = 1 ; j <= $reas; j++ )) ### Inner for loop ###
+	do
+          echo -n "*"
+	done
+echo " "
+done
