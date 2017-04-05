@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-#kujund tärnide, ringide ja plussidega
+#Maja katusega
 #
 for((r=1; r<7; r++))
 do
@@ -14,7 +14,7 @@ do
 	 #tuleb lisada o-d
 	 for((v=1; v<$r; v++))
 	 do
-	 echo -n "o "
+	 echo -n "+ "
 	 done
 #lisame plussid
         	for((v=1; v<$(($r+1)); v++))
@@ -24,3 +24,17 @@ do
 	#kui rida lõpeb - reavahetus
 	echo
 done
+#
+for (( i = 1; i <= 5; i++ ))      ### Outer for loop ###
+do
+echo -n "  "
+echo -n "+ "
+    for ((j=2 ; j<9; j++ )) ### Inner for loop ###
+    do
+          echo -n "o "
+    done
+echo -n "+ "
+  echo "" #### print the new line ###
+done
+
+
