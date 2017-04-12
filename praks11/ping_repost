@@ -1,0 +1,20 @@
+#!/bin/bash
+#pingimine IP_range 172.23.13.20-172.23.13.40
+
+echo -n "Ip vahemiku algus:"
+read algus;
+echo -n "Ip vahemiku lopp:"
+read lopp;
+
+now=$(date +"%m-%d-%Y")
+for (( nr=$algus; nr<=$lopp; nr++ ))
+do
+	ip="172.23.13.$nr" >>  fail.$now
+	#ping $ip -c 1 -f voib seda kasutada ka
+	ping $ip -c 1 > /dev/null
+	if [ $? -eq 0 ]; then
+		echo "$ip - OK" >> fail.$now
+	else
+		echo "$ip - NOT OK"  >> fail.$now
+	fi
+done
