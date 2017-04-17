@@ -1,0 +1,24 @@
+#!/bin/bash
+#
+# See skript küsib kella ja kirjtuab kellajale vastava teksti ning ütleb, kes sa oled
+#
+#Koigepealt tuleb küsida, mis on täistunnid
+#
+kell=`date | cut -c12-13`
+#tuleb kontrollida, mis vastust anti
+if   [ $kell -ge 6 -a $kell -lt 12 ]; then
+	vastus="Tere hommikust" #väljastab hommiku vastuse
+elif [ $kell -ge 12 -a $kell -lt 18 ]; then
+        vastus="Tere päevast" #väljastab päeva vastuse
+elif [ $kell -ge 18 -a $kell -lt 22 ]; then
+        vastus="Tere õhtust" # väljastab õhtu vastuse
+elif [ $kell -ge 22 -a $kell -lt 24 ]; then
+        vastus="Head ööd" #väljastab öö vastuse 22-st 24-ni
+elif [ $kell -ge 0 -a $kell -lt 6 ]; then
+	vastus="Head ööd" #väljastab öö vastuse 0-st 6-ni
+else
+	vastus="Vastus on katkine" #väljastab veateate
+fi
+a=`whoami `
+echo  "$vastus, $a!"
+#skripti lõpp
