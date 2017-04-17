@@ -1,0 +1,23 @@
+#!/bin/bash
+#
+# See skript küsib kella ja kirjtuab kellajale vastava teksti
+#
+#Koigepealt tuleb küsida, mis on täistunnid
+#
+echo -n "Täistund on: "
+read taistund;
+#tuleb kontrollida, mis vastust anti
+if   [ $taistund -ge 6 $taistund -lt 12 ]; then
+	echo "Tere hommikust!" #väljastab hommiku vastuse
+elif [ $taistund -ge 12 -a $taistund -lt 18 ]; then
+        echo "Tere päevast!" #väljastab päeva vastuse
+elif [ $taistund -ge 18 -a $taistund -lt 22 ]; then
+        echo "Tere õhtust!" # väljastab õhtu vastuse
+elif [ $taistund -ge 22 -a $taistund -lt 24 ]; then
+        echo "Head ööd!" #väljastab öö vastuse 22-st 24-ni
+elif [ $taistund -ge 0 -a $taistund -lt 6 ]; then
+	echo "Head ööd!" #väljastab öö vastuse 0-st 6-ni
+else
+	echo "Katki"#väljastab veateate
+fi
+#skripti lõpp
