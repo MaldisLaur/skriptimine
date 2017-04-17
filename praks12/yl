@@ -7,7 +7,7 @@
 echo -n "Täistund on: "
 read taistund;
 #tuleb kontrollida, mis vastust anti
-if   [ $taistund -ge 6 $taistund -lt 12 ]; then
+if   [ $taistund -ge 6 -a $taistund -lt 12 ]; then
 	echo "Tere hommikust!" #väljastab hommiku vastuse
 elif [ $taistund -ge 12 -a $taistund -lt 18 ]; then
         echo "Tere päevast!" #väljastab päeva vastuse
