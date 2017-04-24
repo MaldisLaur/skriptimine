@@ -1,0 +1,22 @@
+#!/bin/bash
+#see skript loob määratud arvu faile
+echo -n "Sisestage arv kui palju faile tehakse: "
+read arv
+#skripti osa, mis teeb selle
+for((v=1; v<=$arv; v++))
+do
+ failinimi="fail$v"
+ if [ -f $failinimi ]; then
+   echo "$failinimi fail juba olemas"
+   echo -n "Kas soovid asendada uue failiga? Y/N"
+ read vastus
+ if [ "$vastus" = "y" -o "$vastus" = "Y" ]; then
+	rm $failinimi
+	touch $failinimi
+ fi
+ else
+   touch $failinimi
+   echo "$failinimi on loodud"
+ fi
+done
+

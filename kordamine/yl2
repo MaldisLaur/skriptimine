@@ -1,0 +1,41 @@
+#!/bin/bash
+#see skript loob määratud arvu faile määratud nimega
+echo "1 - loon faili vastava nimega"
+echo "2 - loon vastava nimega faili ja avan nanoga"
+echo "3 - väljun antud programmist"
+echo
+echo -n "Millist töömenüüd te soovite: "
+read menu
+##################1. loob faili vastava nimega ja koguse
+if [ "$menu" = "1" ]; then
+echo -n "Sisestage faili nimi: "
+read nimi
+echo -n "Sisestage arv kui palju faile tehakse: "
+read arv
+#skripti osa, mis teeb selle
+for((v=1; v<=$arv; v++))
+do
+ failinimi="$nimi$v"
+ if [ -f $failinimi ]; then
+   echo "$failinimi fail juba olemas"
+   echo -n "Kas soovid asendada uue failiga? Y/N"
+ read vastus
+ if [ "$vastus" = "y" -o "$vastus" = "Y" ]; then
+	rm $failinimi
+	touch $failinimi
+ fi
+ else
+   touch $failinimi
+   echo "$failinimi on loodud"
+ fi
+done
+#######2. loob faili vastava imega ja avab nanoga
+elif [ "$menu" = "2" ]; then
+echo -n "Sisestage faili nimi: "
+read nimi2
+nano $nimi2
+###########3. väljub programmist
+elif [ "$menu" = "2" ]; then
+   exit
+else echo  "Palun kasuta valikut 1-3"
+fi
