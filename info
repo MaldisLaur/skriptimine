@@ -1,0 +1,7 @@
+#!/bin/bash
+#Skripti algus, Maldis-Sveno Laur'i oma
+#See skript tervitab sisselogitud kasutajat
+echo "Tere `whoami`!" #Tervitab sisselogitud kasutajat
+echo "Täna on `date +'%d.%m.%y'` kell `date +'%H:%M'`" #Kuvab kuupäeva, kellaja
+echo `cal` #Kuvab kalendri
+
